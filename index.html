@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #000000;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -24,50 +24,37 @@
 
         .container {
             text-align: center;
-            max-width: 600px;
+            max-width: 700px;
             padding: 3rem 2rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
             animation: fadeInUp 1s ease-out;
         }
 
         .logo {
             width: 120px;
             height: 120px;
-            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
-            border-radius: 50%;
             margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: pulse 2s infinite;
-            position: relative;
+            border-radius: 20px;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
         }
 
-        .logo::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: shimmer 3s infinite;
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffd93d, #ff6b6b, #4ecdc4);
+            background: linear-gradient(45deg, #00d4ff, #0099cc, #0066ff);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             background-clip: text;
@@ -82,82 +69,109 @@
             opacity: 0.9;
             font-weight: 300;
             letter-spacing: 0.5px;
+            color: #cccccc;
         }
 
         .description {
             font-size: 1.1rem;
             line-height: 1.6;
-            margin-bottom: 3rem;
-            opacity: 0.8;
-            max-width: 500px;
+            margin-bottom: 2rem;
+            opacity: 0.85;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            color: #e0e0e0;
         }
 
         .app-store-btn {
             display: inline-block;
-            background: linear-gradient(45deg, #000000, #434343);
-            color: white;
-            text-decoration: none;
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.1rem;
+            margin: 2rem 0;
             transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            position: relative;
+            border-radius: 12px;
             overflow: hidden;
         }
 
-        .app-store-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
+        .app-store-btn img {
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s ease;
         }
 
-        .app-store-btn:hover::before {
-            left: 100%;
-        }
-
-        .app-store-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            border-color: rgba(255, 255, 255, 0.4);
+        .app-store-btn:hover img {
+            transform: scale(1.05);
         }
 
         .features {
-            margin-top: 3rem;
+            margin: 3rem 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
-            text-align: center;
+            text-align: left;
         }
 
         .feature {
-            padding: 1.5rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .feature:hover {
             transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(0, 212, 255, 0.3);
         }
 
         .feature-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
+            color: #00d4ff;
         }
 
         .feature-text {
-            font-size: 0.9rem;
-            opacity: 0.9;
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.4;
+            color: #cccccc;
+        }
+
+        .support-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .support-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+
+        .support-email {
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .support-email:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
         }
 
         @keyframes fadeInUp {
@@ -173,12 +187,7 @@
 
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            50% { transform: scale(1.03); }
         }
 
         @keyframes gradientMove {
@@ -203,42 +212,70 @@
             .logo {
                 width: 100px;
                 height: 100px;
-                font-size: 2.5rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .feature {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">•</div>
+        <div class="logo">
+            <img src="logo.png" alt="DotSurvive Logo">
+        </div>
         <h1>DotSurvive</h1>
         <p class="subtitle">The Ultimate Survival Challenge</p>
         <p class="description">
-            Test your reflexes in this addictive arcade game. Dodge enemies, collect power-ups, 
-            and unlock powerful skills to survive as long as possible!
+            Test your reflexes and survival instincts in this addictive arcade game that combines simple drag controls with deep strategic gameplay. Navigate through increasingly chaotic waves of enemies, collect game-changing power-ups, and unlock powerful skills to customize your playstyle. How long can you survive when everything is trying to destroy you?
         </p>
         
-        <a href="https://apps.apple.com/app/dotsurvive/idYOUR_APP_ID" class="app-store-btn">
-            📱 Download on App Store
+        <a href="https://apps.apple.com/us/app/dotsurvive/id6749165299" class="app-store-btn">
+            <img src="app_store_badge.svg" alt="Download on the App Store">
         </a>
         
         <div class="features">
             <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-text">Skill Tree System</div>
+                <div class="feature-icon">🎯</div>
+                <div class="feature-title">Skill Tree System</div>
+                <div class="feature-text">Unlock and upgrade 7 powerful skills including speed boost, damage resistance, and coin collector. Each skill has 5 levels to customize your playstyle.</div>
             </div>
             <div class="feature">
-                <div class="feature-icon">🛡️</div>
-                <div class="feature-text">5 Power-ups</div>
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">5 Game-Changing Power-ups</div>
+                <div class="feature-text">Shield protection, shrink ability, slow motion, screen clear, and bouncer shield. Smart power-up usage is essential for high scores.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👾</div>
+                <div class="feature-title">8 Unique Enemy Types</div>
+                <div class="feature-text">From basic dots to intelligent bouncers that hunt you down, giant slow enemies, and zigzag attackers. Each requires different strategies.</div>
             </div>
             <div class="feature">
                 <div class="feature-icon">🏆</div>
-                <div class="feature-text">Global Leaderboards</div>
+                <div class="feature-title">Global Competition</div>
+                <div class="feature-text">Compete on Game Center leaderboards and unlock achievements. Compare your survival times with players worldwide.</div>
             </div>
             <div class="feature">
                 <div class="feature-icon">🎨</div>
-                <div class="feature-text">Premium Skins</div>
+                <div class="feature-title">Premium Skins</div>
+                <div class="feature-text">Express yourself with beautiful visual effects including rainbow cycling, fire trails, ice crystals, and electric sparks.</div>
             </div>
+            <div class="feature">
+                <div class="feature-icon">🚫</div>
+                <div class="feature-title">No Forced Ads</div>
+                <div class="feature-text">Experience uninterrupted gameplay with optional ad removal. Rewarded videos offer revival opportunities without forced interruptions.</div>
+            </div>
+        </div>
+
+        <div class="support-section">
+            <div class="support-title">Need Help?</div>
+            <a href="mailto:aaronaustinjr@rocketmail.com" class="support-email">aaronaustinjr@rocketmail.com</a>
         </div>
     </div>
 </body>
